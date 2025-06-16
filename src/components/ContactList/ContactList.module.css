@@ -1,0 +1,41 @@
+.wrapper {
+  list-style: none;
+  padding-left: 0;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.name {
+  font-weight: 600;
+  color: #333;
+}
+
+.number {
+  color: #666;
+  margin-left: 12px;
+  font-family: monospace;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.deleteButton:hover {
+  color: #a71d2a;
+}
