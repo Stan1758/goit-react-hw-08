@@ -2,11 +2,11 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import s from "./SearchBox.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeFilter } from "../../redux/filtersSlice";
+import { changeFilter, selectNameFilter } from "../../redux/filtersSlice";
 
 function SearchBox() {
   const dispatch = useDispatch();
-  const filter = useSelector((state) => state.filter.text);
+  const filter = useSelector(selectNameFilter);
 
   return (
     <Formik initialValues={{ search: filter }} enableReinitialize={true}>
@@ -20,6 +20,7 @@ function SearchBox() {
             name="search"
             className={s.input}
             type="text"
+            value={filter}
             onChange={(e) => dispatch(changeFilter(e.target.value))}
           />
         </Form>

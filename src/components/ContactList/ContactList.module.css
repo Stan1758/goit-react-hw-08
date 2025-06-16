@@ -39,3 +39,13 @@
 .deleteButton:hover {
   color: #a71d2a;
 }
+
+.statusLoading {
+  color: rgb(30, 138, 30);
+}
+.statusError {
+  color: #dc3545;
+}
+.statusNotFound {
+  color: rgb(19, 103, 103);
+}

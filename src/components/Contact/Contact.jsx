@@ -3,10 +3,11 @@ import s from "./Contact.module.css";
 import { RiContactsLine } from "react-icons/ri";
 import { BsTelephone } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { deleteContacts } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 function Contact({ contact }) {
   const dispatch = useDispatch();
+  const isChuckNorris = contact.name.trim().toLowerCase() === "chuck norris";
 
   return (
     <li className={s.item}>
@@ -24,8 +25,11 @@ function Contact({ contact }) {
         type="button"
         className={s.deleteButton}
         onClick={() => {
-          dispatch(deleteContacts(contact.id));
+          if (!isChuckNorris) {
+            dispatch(deleteContact(contact.id));
+          }
         }}
+        disabled={isChuckNorris}
       >
         Delete
       </button>
