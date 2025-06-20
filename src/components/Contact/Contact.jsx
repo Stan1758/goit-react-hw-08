@@ -3,7 +3,7 @@ import s from "./Contact.module.css";
 import { RiContactsLine } from "react-icons/ri";
 import { BsTelephone } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsOps";
+import { deleteContact } from "../../redux/contacts/operations";
 
 function Contact({ contact }) {
   const dispatch = useDispatch();
