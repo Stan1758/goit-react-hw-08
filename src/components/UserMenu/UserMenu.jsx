@@ -3,6 +3,8 @@ import { logout } from "../../redux/auth/operations";
 import { selectUser } from "../../redux/auth/selectors";
 import { clearContacts } from "../../redux/contacts/slice";
 
+import s from "./UserMenu.module.css";
+
 const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -13,9 +15,11 @@ const UserMenu = () => {
   };
 
   return (
-    <div>
-      <p>Welcome, {user.name}</p>
-      <button onClick={handleLogout}>Logout</button>
+    <div className={s.wrapper}>
+      <p className={s.greeting}>Welcome, {user.name}</p>
+      <button className={s.button} onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 };

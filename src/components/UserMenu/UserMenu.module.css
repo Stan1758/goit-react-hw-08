@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+}
+
+.greeting {
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+}
+
+.button {
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #a81e2d;
+}

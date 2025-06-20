@@ -11,7 +11,7 @@ import ContactForm from "../components/ContactForm/ContactForm";
 import ContactsList from "../components/ContactList/ContactList";
 import SearchBox from "../components/SearchBox/SearchBox";
 
-import s from "./PagesStyle.module.css";
+import s from "./css/ContactsPage.module.css";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -24,14 +24,14 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <section className={s.container} style={{ padding: 20 }}>
+    <section className={s.container}>
       <h1 className={s.title}>Phonebook</h1>
 
       <ContactForm />
       <SearchBox />
 
-      {isLoading && <p>Loading contacts...</p>}
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      {isLoading && <p className={s.statusMessage}>Loading contacts...</p>}
+      {error && <p className={s.error}>Error: {error}</p>}
 
       <ContactsList contacts={contacts} />
     </section>
