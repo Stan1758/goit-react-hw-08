@@ -36,14 +36,14 @@
 .deleteButton {
   background-color: transparent;
   border: none;
-  color: #414046;
+  color: #dc3545;
   font-weight: 700;
   cursor: pointer;
   transition: color 0.2s ease;
   margin-left: 8px;
 }
 .deleteButton:hover {
-  color: #9b8675;
+  color: #a71d2a;
 }
 .wrapper {
   width: 100%;

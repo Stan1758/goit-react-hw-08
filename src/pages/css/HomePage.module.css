@@ -16,11 +16,11 @@
 
 .text {
   font-size: 18px;
-  color: #414046;
+  color: #555;
   margin-bottom: 12px;
 }
 
 .highlight {
   font-weight: 600;
-  color: #417487;
+  color: #007bff;
 }
