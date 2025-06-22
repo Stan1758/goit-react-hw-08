@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
-import s from "./Form.module.css";
+import s from "./LoginForm.module.css";
 
 const validationSchema = Yup.object({
   email: Yup.string()

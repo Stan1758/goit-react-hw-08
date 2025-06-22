@@ -13,7 +13,7 @@ function SearchBox() {
       {() => (
         <Form className={s.wrapper}>
           <label htmlFor="search" className={s.label}>
-            Find contacts by name:
+            Find contacts by name or number:
           </label>
           <Field
             id="search"

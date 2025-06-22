@@ -3,9 +3,8 @@ import {
   fetchContacts,
   addContact,
   deleteContact,
+  updateContact,
 } from "../contacts/operations";
-// import { createSelector } from "reselect";
-// import { selectNameFilter } from "../contacts/slice";
 
 const initialState = {
   items: [],
@@ -66,6 +65,12 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(updateContact.fulfilled, (state, action) => {
+        const index = state.items.findIndex((c) => c.id === action.payload.id);
+        if (index !== -1) {
+          state.items[index] = action.payload;
+        }
       });
   },
 });

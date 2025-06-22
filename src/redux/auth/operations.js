@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 axios.defaults.baseURL = "https://connections-api.goit.global";
 
@@ -22,6 +23,9 @@ export const register = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
+      if (error.response?.data?.name === "MongoError") {
+        toast.error("This email is already registered. Try another one. ");
+      }
       console.error(
         "Register error full response:",
         error.response?.data || error.message
@@ -33,16 +37,18 @@ export const register = createAsyncThunk(
   }
 );
 
-// login
 export const login = createAsyncThunk(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post("/users/login", credentials);
+      const { email, password } = credentials;
+      const res = await axios.post("/users/login", { email, password });
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(
+        error.response?.data?.message || error.message
+      );
     }
   }
 );

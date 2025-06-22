@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import s from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
+import toast from "react-hot-toast";
 
 function ContactForm() {
   const dispatch = useDispatch();
@@ -22,8 +23,15 @@ function ContactForm() {
       initialValues={{ name: "", number: "" }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
-        dispatch(addContact(values));
-        actions.resetForm();
+        dispatch(addContact(values))
+          .unwrap()
+          .then(() => {
+            toast.success(`Contact "${values.name}" added!`);
+            actions.resetForm();
+          })
+          .catch(() => {
+            toast.error("Unable to add contact");
+          });
       }}
     >
       <Form className={s.wrapper}>

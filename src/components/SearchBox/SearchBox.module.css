@@ -11,8 +11,8 @@
 
 .input:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 2px #007bff;
+  border-color: #417487;
+  box-shadow: 0 0 2px #417487;
   transition: ease;
 }
 

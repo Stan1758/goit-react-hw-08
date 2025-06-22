@@ -4,8 +4,13 @@
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  background-color: #f3f3f3;
+  background-color: #fdfdfd;
   border-bottom: 1px solid #ddd;
+  max-width: 800px;
+  border-radius: 12px;
+  box-sizing: content-box;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .link {
@@ -16,9 +21,3 @@
   border-radius: 6px;
   transition: background-color 0.3s ease;
 }
-
-/* .link:hover,
-.active {
-  background-color: #007bff;
-  color: white;
-} */

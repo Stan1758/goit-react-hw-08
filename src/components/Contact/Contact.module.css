@@ -9,9 +9,14 @@
   border-radius: 5px;
   width: 200px;
 }
+.form {
+  padding: 0;
+  margin: 0;
+}
 .div {
   text-align: left;
 }
+
 .item {
   display: flex;
   justify-content: space-between;
@@ -22,6 +27,7 @@
   border-radius: 6px;
   background-color: #f9f9f9;
 }
+
 .name {
   font-weight: 600;
   color: #333;
@@ -36,15 +42,17 @@
 .deleteButton {
   background-color: transparent;
   border: none;
-  color: #dc3545;
+  color: #9b8675;
   font-weight: 700;
   cursor: pointer;
   transition: color 0.2s ease;
-  margin-left: 8px;
+  box-sizing: content-box;
 }
+
 .deleteButton:hover {
-  color: #a71d2a;
+  color: #dc3545;
 }
+
 .wrapper {
   width: 100%;
   display: flex;
@@ -56,4 +64,98 @@
   margin-right: 6px;
   position: relative;
   top: 2px;
+}
+
+.editButton {
+  background-color: transparent;
+  border: none;
+  color: #9b8675;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.2s ease;
+}
+
+.editButton:hover {
+  color: #4caf50;
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.editInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  /* color: inherit; */
+  color: #9b8675;
+  font-weight: 600;
+  width: 40px; /* обмежуємо ширину */
+  padding: 2px 4px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.infoWrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.name,
+.number {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 110px;
+  flex-shrink: 0;
+  margin: auto;
+}
+
+.editInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  width: 150px;
+  max-width: 150px;
+  min-width: 100px;
+  padding: 2px 4px;
+  box-sizing: border-box;
+  margin-right: 10px;
 }
